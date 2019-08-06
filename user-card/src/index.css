@@ -1,3 +1,6 @@
+html{
+  background: Gainsboro;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +8,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.cards{
+  width: 200px;
+  height: 300px;
+  background: white;
+  display: inline-flex;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.avi{
+  width: 100px;
+  height: 100px;
+  background: lightcoral;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.long{
+  width: 100%;
+}
+
+.avicircle{
+  width: 120px;
+  height: 120px;
+
+}
+
+.btn{
+  background: teal;
+  width: 40px;
+  padding: 10px 20px;
+  color: white;
+  box-shadow: 3px 3px darkgrey;
+
 }
