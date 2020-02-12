@@ -96,6 +96,7 @@ fetchUsers = e =>{
         {!this.state.error && (
           <>
         <MyProfile error={this.state.error} users={this.state.users}/>
+        {/* <h1>{console.log('followers in app ->', this.state.users.login)}{this.state.users.login}'s Followers</h1> */}
         <Followers error={this.state.error} followers={this.state.followers}/>
         </>
         )}
