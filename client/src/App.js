@@ -49,12 +49,33 @@ handleChanges = e => {
   console.log(e.target.value)
 };
 
+fetchUsers = e =>{
+  console.log('Users are being fetched')
+  e.preventDefault();
+  axios.all([
+    axios.get(`https://api.github.com/${this.state.userText}/ebisLab`),
+    axios.get(`https://api.github.com/users/${this.state.userText}/followers`)
+  ])
+  .then(axios.spread((myRes, followRes) => {
+    this.setState({
+          users: myRes.data,
+          followers: followRes.data, 
+          error: ''
+        })
+  }))
+  .catch(err => {
+    this.setState({
+      error: 'Looks like we could not find that user. Please try again'
+    })
+  })
+}
+
   render(){
     // console.log('inside app followers', this.state.followers)
     return (
       <div className="App">
         <h1>Data from API</h1>
-        <form style={{margin: '20px'}}>
+        <form style={{margin: '20px'}} onSubmit={this.fetchUsers}>
           <input placeholder="Search User..."
           type="text"
         value={this.state.userText}
