@@ -74,14 +74,22 @@ fetchUsers = e =>{
     // console.log('inside app followers', this.state.followers)
     return (
       <div className="App">
-        <h1>Data from API</h1>
+        <h1>GitHub Card Profile</h1>
         <form style={{margin: '20px'}} onSubmit={this.fetchUsers}>
           <input placeholder="Search User..."
           type="text"
         value={this.state.userText}
         onChange={this.handleChanges}
+        style={{border: '1px solid black', padding: '5px', width: '18%', height: '25px' , margin: '10px'}}
           />
-          <button onC={this.fetchUsers}>Search</button>
+          <button onClick={this.fetchUsers} 
+          style={{ 
+            width: '100px',
+            border: '1px solid black',
+            boxShadow: '5px 10px',
+            padding: '5px',
+            verticalAlign: 'super'
+            }}>Search</button>
         </form>
 
         {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
