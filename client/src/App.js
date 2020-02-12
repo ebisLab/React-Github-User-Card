@@ -85,8 +85,12 @@ fetchUsers = e =>{
         </form>
 
         {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
-        <MyProfile users={this.state.users}/>
-        <Followers followers={this.state.followers}/>
+        {!this.state.error && (
+          <>
+        <MyProfile error={this.state.error} users={this.state.users}/>
+        <Followers error={this.state.error} followers={this.state.followers}/>
+        </>
+        )}
       </div>
     );
   }
