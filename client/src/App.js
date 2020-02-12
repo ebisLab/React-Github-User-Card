@@ -41,11 +41,27 @@ componentDidMount(){
   .catch(err => console.log(err))
 }
 
+handleChanges = e => {
+  console.log(e.target.value)
+  this.setState({
+    userText: e.target.value
+  });
+  console.log(e.target.value)
+};
+
   render(){
-    console.log('inside app followers', this.state.followers)
+    // console.log('inside app followers', this.state.followers)
     return (
       <div className="App">
         <h1>Data from API</h1>
+        <form style={{margin: '20px'}}>
+          <input placeholder="Search User..."
+          type="text"
+        value={this.state.userText}
+        onChange={this.handleChanges}
+          />
+          <button>Search</button>
+        </form>
         <MyProfile users={this.state.users}/>
         <Followers followers={this.state.followers}/>
       </div>

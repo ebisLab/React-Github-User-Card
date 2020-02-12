@@ -4,7 +4,7 @@ const Users = (props) => {
 
     return(
     <div style={{borderRadius: '20px', border: '1px solid black', margin:'20px', width: '400px', display: 'inline-block', boxShadow: '5px 10px'}}>
-   {console.log('props inside Users -->', props)}
+   {/* {console.log('props inside Users -->', props)} */}
 <div style={{display: 'flex'}}>
     
    <img src={props.folks.avatar_url} 
