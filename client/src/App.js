@@ -53,7 +53,7 @@ fetchUsers = e =>{
   console.log('Users are being fetched')
   e.preventDefault();
   axios.all([
-    axios.get(`https://api.github.com/${this.state.userText}/ebisLab`),
+    axios.get(`https://api.github.com/users/${this.state.userText}`),
     axios.get(`https://api.github.com/users/${this.state.userText}/followers`)
   ])
   .then(axios.spread((myRes, followRes) => {
@@ -81,8 +81,10 @@ fetchUsers = e =>{
         value={this.state.userText}
         onChange={this.handleChanges}
           />
-          <button>Search</button>
+          <button onC={this.fetchUsers}>Search</button>
         </form>
+
+        {this.state.error && <p style={{color: 'red'}}>{this.state.error}</p>}
         <MyProfile users={this.state.users}/>
         <Followers followers={this.state.followers}/>
       </div>
